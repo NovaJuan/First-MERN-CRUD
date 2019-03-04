@@ -30,6 +30,9 @@ class LogIn extends Component{
     }).then(res => res.json())
       .then(data =>{
         if(!data.error){
+          this.setState({
+            error:''
+          })
           this.props.handleLogging()
           this.props.history.push('/');
         }else{
@@ -75,7 +78,9 @@ class LogIn extends Component{
               <div className="form-group">
                 <p className='text-danger'>{this.state.error}</p>
               </div>
-              
+              <div className="form-group">
+                <p className='text-danger'>{this.state.error}</p>
+              </div>
             </form>
           </div>
         </div>
